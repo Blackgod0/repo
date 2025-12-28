@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-todo-app
+spec:
+  replicas: 1  # How many copies you want running
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      # THIS IS THE CRUCIAL PART FOR PRIVATE REGISTRIES
+      imagePullSecrets:
+      - name: my-registry-key
+      
+      containers:
+      - name: todo-container
+        # Replace with YOUR actual image path
+        image: blk01/task:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        # This keeps the container alive for the demo since the script
+        # waits for input. (Not needed for web servers like Flask/Django)
+        stdin: true 
+        tty: true
