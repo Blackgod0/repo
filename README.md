@@ -34,6 +34,11 @@ Apply the deployment configuration:
 Expose the application:
 `kubectl apply -f service.yaml`
 
-### 3. Access the App
+### 3. Cloud Deployment (Railway)
+The application is also deployed on **Railway** for instant access. 
+* Continuous Deployment is configured via GitHub.
+* Dockerized environment ensures parity between local K8s and cloud hosting.
+
+### 4. Access the App
 Once the pods are running, access the app via:
-`http://localhost:<port>` (or your Cluster IP)
+`repo-production-4cb9.up.railway.app` (or your Cluster IP)
