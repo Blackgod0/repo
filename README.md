@@ -41,4 +41,4 @@ The application is also deployed on **Railway** for instant access.
 
 ### 4. Access the App
 Once the pods are running, access the app via:
-`repo-production-4cb9.up.railway.app` (or your Cluster IP)
+`[repo-production-4cb9.up.railway.app](http://localhost:<port>)` (or your Cluster IP)
