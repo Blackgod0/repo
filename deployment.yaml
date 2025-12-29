@@ -19,7 +19,7 @@ spec:
       containers:
       - name: todo-container
         # Replace with YOUR actual image path
-        image: blk01/task:v1
+        image: blk01/todo-app:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
@@ -27,3 +27,10 @@ spec:
         # waits for input. (Not needed for web servers like Flask/Django)
         stdin: true 
         tty: true
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
